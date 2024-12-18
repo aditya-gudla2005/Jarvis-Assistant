@@ -1,0 +1,32 @@
+known_users = ["Alice", "Bob", "Claire", "Dan", "Emma", "Fred", "Georgie", "Harry"]
+message = "Hello!! this message is encrypted ,we need you to send the coordinates for the infinity stones, THANOS IS COMING I REPEAT THANOS IS COMING"
+
+while True:
+    print("Hi! My name is Jarvis")
+    name = input("What is your name?: ").strip().capitalize()
+
+    if name in known_users:
+        print("Hello {}!".format(name))
+        remove = input("Would you like to be removed from the system (y/n)?: ").strip().lower()
+        
+        if remove == "y":
+            known_users.remove(name)
+        elif remove == "n":
+            print("No problem, I didn't want you to leave anyway!")
+            show_message = input("You have an message , would you like to be showed (y/n)?: ").strip().lower()
+            if show_message == "y":
+                  print("Here is your message->  {}" .format(message))
+            elif show_message == "n":
+                print("No problem , you can come back if you want to read it")
+            
+
+
+            
+    else:
+        print("Hmmm I don't think I have met you yet {}".format(name))
+        add_me = input("Would you like to be added to the system (y/n)?: ").strip().lower()
+        if add_me == "y":
+             known_users.append(name)
+        elif add_me == "n":
+            print("No worries, see you around!")
+
